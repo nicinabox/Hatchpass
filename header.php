@@ -4,7 +4,7 @@ if (!isset($_GET['id']) || $_GET['action'] == "newUrl") {
   $url = newUrl();
   header("Location: /?id=".$url);
 }
-
+$uri = parse_url($_SERVER['REQUEST_URI']);
 ?>
 <!docytype html>
 <html manifest="/cache.manifest">
@@ -16,10 +16,17 @@ if (!isset($_GET['id']) || $_GET['action'] == "newUrl") {
 	<title>HatchPass</title>
 	
 	<link rel="icon" type="image/png" href="/favicon.png">	
+	
+	<?php if($uri['path'] != "/"): ?>
   <link rel="stylesheet" href="/jqtouch/jqtouch.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/themes/apple/theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <?php else: ?>
+  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <?php endif ?>
   
 	<script src="/jqtouch/jquery.1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<?php if($uri['path'] != "/"): ?>
 	<script src="/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	  var jQT = new $.jQTouch({
@@ -37,7 +44,8 @@ if (!isset($_GET['id']) || $_GET['action'] == "newUrl") {
             ]
     });
 	</script>
-	<script src="/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/iphone.js" type="text/javascript" charset="utf-8"></script>
+	<?php endif; ?>
 </head>
 <body>
   <?php  

@@ -35,16 +35,16 @@ if ($_POST['action'] == "makeHash") {
 	$master = $_POST['master'];
 	$host = strtolower($_POST['host']);
 	$s = $_POST['settings'];
-
+//print_r($s);
 	// Select algorithm
-	$alg = $s['algorithm']."Hash";
+	$alg = $s['h_algorithm']."Hash";
 	
 	// Create the new password
 	$out = $alg($master, $host, $s);	
 	echo $out;
 }
 
-if ($_POST['action'] == "getDefaultSettings") {
-  echo defaultSettings($_POST['id'], $_POST['method']);
+if ($_POST['action'] == "hashString") {
+  echo md5($_POST['str']);
 }
 ?>

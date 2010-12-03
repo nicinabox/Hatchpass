@@ -4,14 +4,7 @@ $(document).ready(function(){
 	var OPT = false;
 	var settingsID = getSettingsForUrl();
 	var s = defaultSettings();
-	
-	// are we mobile?
-	var agent=navigator.userAgent.toLowerCase();
-  var is_iphone = ((agent.indexOf('iphone')!=-1);
-  if (is_iphone) { 
-    window.location = "http://hatchpass.org/m/"+self.location.search;
-    var m = self.location.pathname; 
-  }
+	var m = self.location.pathname; //mobile?
 	
 	if (settingsID == ID) {
 		var hatchMaster = localStorage.getItem("hatchMaster");

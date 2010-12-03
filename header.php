@@ -30,7 +30,7 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
 	<script src="/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	  var jQT = new $.jQTouch({
-        icon: 'apple-touch-icon.png',
+        icon: '/apple-touch-icon.png',
         addGlossToIcon: false,
         startupScreen: 'jqt_startup.png',
         statusBar: 'black',
@@ -38,6 +38,7 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
             // '/themes/apple/img/back_button.png',
             // '/themes/apple/img/back_button_clicked.png',
             // '/themes/apple/img/button_clicked.png',
+            '/themes/apple/img/on_off.png',
             '/themes/apple/img/grayButton.png',
             '/themes/apple/img/whiteButton.png',
             '/themes/apple/img/loading.gif'

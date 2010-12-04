@@ -8,7 +8,10 @@
 <?php endif ?>  
 
   <form method="POST">
-    <a class="button blueButton" href="#" id="saveSettings">Done</a>
+    <?php if ($desktop): ?>
+      <a class="button blueButton" href="#" id="saveSettings">Done</a>
+    <?php endif ?>
+    
   	<h2>Variation</h2>
   	<ul>
   	  <li><label>Symbols</label> <span class="toggle"><input id="symbols" type="checkbox" <?php echo parseSetting($s->symbols); ?>/></span></li>

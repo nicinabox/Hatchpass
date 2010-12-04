@@ -68,7 +68,6 @@ switch ($uri['path']) {
     <script src="/js/desktop.js" type="text/javascript" charset="utf-8"></script>
   
   <?php endif ?>
-  
 </head>
 <body>
   <?php  

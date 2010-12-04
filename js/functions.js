@@ -156,7 +156,6 @@ function updateSecure(ID) {
 	
 	if (master != '' && host != '') {
 		mySettings = getSettings(ID);
-		console.log(mySettings);
 		$.post('/post.php',{
 			master: master, 
 			host: host,

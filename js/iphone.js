@@ -1,5 +1,5 @@
 $(document).ready(function(){		
-	
+
 	$('#otherButton.blueButton').attr('target', '_self');
 	
 	// Remember url
@@ -30,7 +30,7 @@ $(document).ready(function(){
 	
 	// Update settings
 	$('#saveSettings').click(function(){
-		var mySettings = getSettings();
+		var mySettings = getSettings(ID);
 
 		if (mySettings.r_master == "1") {
 			rememberMaster(ID);
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		// These settings are specific to this url
 		var settingsChanged = false;
 		setSettingsForUrl(ID);
-		updateSecure();	
+		updateSecure(ID);	
 		jQT.goBack();
 	});
 	

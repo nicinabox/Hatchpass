@@ -5,9 +5,9 @@ if ($_POST['action'] == "updateSettings") {
   // Check to see if settings already saved
   $result = mysql_query("SELECT myId FROM settings WHERE myId = '{$s['id']}'");
   if (mysql_num_rows($result) > 0) { // Update
-    $sql = "UPDATE settings SET symbols = '{$s['symbols']}', caps = '{$s['caps']}', strlen = '{$s['strlen']}', h_algorithm = '{$s['algorithm']}', r_settings = '{$s['r_settings']}' WHERE myId = '{$s['id']}'";
+    $sql = "UPDATE settings SET symbols = '{$s['symbols']}', caps = '{$s['caps']}', strlen = '{$s['strlen']}', h_algorithm = '{$s['h_algorithm']}', r_settings = '{$s['r_settings']}' WHERE myId = '{$s['id']}'";
   } else { // new settings
-    $sql = "INSERT INTO settings (myId, symbols, caps, strlen, h_algorithm, r_settings) VALUES ('{$s['id']}', '{$s['symbols']}', '{$s['caps']}', '{$s['strlen']}', '{$s['algorithm']}', '{$s['r_settings']}')";
+    $sql = "INSERT INTO settings (myId, symbols, caps, strlen, h_algorithm, r_settings) VALUES ('{$s['id']}', '{$s['symbols']}', '{$s['caps']}', '{$s['strlen']}', '{$s['h_algorithm']}', '{$s['r_settings']}')";
     
   }
   echo "Settings saved.";

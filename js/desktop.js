@@ -88,6 +88,7 @@ $(document).ready(function() {
 			forgetUrl(ID, m);
 		}
 		if(mySettings.r_settings == "1") { // Post to db if we are remembering settings
+		  console.log(mySettings);
 			$.post('/post.php',{
 			 	action: "updateSettings",
 				settings: mySettings

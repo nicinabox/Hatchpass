@@ -23,7 +23,7 @@ $(document).ready(function() {
 			if (code == 27) { $(':focus').blur(); }
 		} else {
 			inputHasFocus = false;
-			if (code == 27) { 
+			if (code == 27) { // Escape functions
 			  if ($('.panel').is(':visible')) {
 			    $('.panel').slideUp(100);
 			  }
@@ -45,7 +45,13 @@ $(document).ready(function() {
 			  case 85: // u
 			    showToolbar("#myUrl");
 			    break;
-			  case 191: // foward slash
+			  case 68: // d
+			    $('#host').select();
+			    break;
+			  case 77: // m
+			    $('#master').select();
+			    break;
+			  case 191: case 72: // foward slash or h
 			    if ($('#help').is(':visible')) {
 			      $('#help').fadeOut('fast');
 			    } else {

@@ -51,13 +51,13 @@ $(document).ready(function(){
 		// These settings are specific to this url
 		var settingsChanged = false;
 		setSettingsForUrl(ID);
-		updateSecure(ID);	
+		updateSecure(ID, m);	
 		jQT.goBack();
 	});
 	
 	// Update main form
 	$("#master, #host").keyup(function() {
-		updateSecure(ID);
+		updateSecure(ID, m);
 	});
 	
 });

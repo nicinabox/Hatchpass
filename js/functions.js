@@ -168,7 +168,7 @@ function forgetUrl(ID, m) {
 	}
 	console.log(msg);
 }
-function updateSecure(ID) {
+function updateSecure(ID, m) {
 	var master = $("#master").val();
 	var host = $("#host").val();
 	
@@ -182,7 +182,9 @@ function updateSecure(ID) {
 		},
 		 function(data){
 			$("#secure").val(data);
-			$('#secure').select();
+			if (m == "/") {
+			  $('#secure').select();
+			}
 		});
 	} else {
 	  $('#secure').val('');

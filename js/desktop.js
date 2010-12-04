@@ -103,14 +103,14 @@ $(document).ready(function() {
 		// These settings are specific to this url
 		var settingsChanged = false;
 		setSettingsForUrl(ID);
-		updateSecure(ID);	
+		updateSecure(ID, m);	
 //		$("#settings").slideUp(100);
 //		return false;
 	});
 	
 	// Update main form
 	$("#master, #host").change(function() {
-		updateSecure(ID);
+		updateSecure(ID, m);
 	});
 	
 });

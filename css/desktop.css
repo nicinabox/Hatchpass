@@ -30,17 +30,21 @@ a {
   text-decoration: underline;
 }
 #hatchForm {
-	width: 230px;
+	width: 240px;
 	background:  white;
 	margin: 0 auto;
 	padding:  20px;
 	-webkit-border-radius: 3px;
-	-webkit-box-shadow: 0 0 5px #888
+	-webkit-box-shadow: 0 0 5px #888;
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0 0 5px #888;
 }
 #hatchForm input {
+  width: 240px;
 	font-size: 20px;
 	padding: 5px;
 	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
 	border: 2px solid silver;
 	background: white;
 	margin: 2px 0;
@@ -73,15 +77,16 @@ input#secure:focus {
 	border-color: #99cc33;
 }
 .clearinput {
-  cursor: hand;
+  cursor: pointer;
 	background: #efefef;
 	padding: 2px 8px 4px 8px;
 	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	color: gray;
 	float: right;
 	position: relative;
 	margin-top: -33px;
-	margin-right: 10px;
+	margin-right: 8px;
 	text-decoration: none;
 	display: none;
 }
@@ -133,7 +138,7 @@ input#secure:focus {
 }
 
 #settings form {
-  width: 510px;
+  width: 540px;
   margin: 0 auto;
 }
 #settings ul {
@@ -145,7 +150,6 @@ input#secure:focus {
 	list-style: none;
 	margin-right: 20px;
 	padding-right: 20px;
-  overflow: auto;
   border-right: 1px dotted #666;
 }
 #settings ul.last {
@@ -168,7 +172,6 @@ input#secure:focus {
   width: 100%;
   top: 0;
   left: 0;
-/*  background: rgba(0,0,0, .85); */
   color: #fff;
   display: none;
 }
@@ -177,6 +180,7 @@ input#secure:focus {
   margin: 80px auto;
   background: rgba(0,0,0, .85);
   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 #help td {
   color: #bbb;

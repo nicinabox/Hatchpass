@@ -16,5 +16,5 @@
       <li><label>Secure</label><input type="text" name="secure" placeholder="" id="secure"/></li>
     </ul>
 	</form>
-	<small id="tagline">The best kept secret is one nobody knows.</small>
+	<small id="tagline"><strong>Esc</strong> + <strong>h</strong> to see shortcuts</small>
 </div>

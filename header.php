@@ -1,8 +1,15 @@
 <?php
 // Generate new ID on refresh
-if (!isset($_GET['id']) || $_GET['action'] == "newUrl") {
+if (!isset($_GET['id'])) {
   $url = newUrl();
-  header("Location: /?id=".$url);
+  $browser = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+  $ipod = strstr($_SERVER['HTTP_USER_AGENT'],'iPod');
+  if ($browser || $ipod)  {
+    header("Location: /m/?id=".$url);
+  } else {
+    header("Location: /?id=".$url);
+  }
+  
 }
 $uri = parse_url($_SERVER['REQUEST_URI']);
 ?>
@@ -21,7 +28,7 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
   <link rel="stylesheet" href="/jqtouch/jqtouch.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="/themes/apple/theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <?php else: ?>
-  <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/css/desktop.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <?php endif ?>
   
 	<script src="/jqtouch/jquery.1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
@@ -30,7 +37,7 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
 	<script src="/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	  var jQT = new $.jQTouch({
-        icon: 'apple-touch-icon.png',
+        icon: '/apple-touch-icon.png',
         addGlossToIcon: false,
         startupScreen: 'jqt_startup.png',
         statusBar: 'black',
@@ -38,6 +45,7 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
             // '/themes/apple/img/back_button.png',
             // '/themes/apple/img/back_button_clicked.png',
             // '/themes/apple/img/button_clicked.png',
+            '/themes/apple/img/on_off.png',
             '/themes/apple/img/grayButton.png',
             '/themes/apple/img/whiteButton.png',
             '/themes/apple/img/loading.gif'

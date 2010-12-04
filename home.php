@@ -13,7 +13,7 @@
       <li><label>Domain</label><input type="url" name="host" placeholder="" id="host" />
         <a class="clearinput">&times;</a>
       </li>
-      <li><label>Secure</label><input type="text" name="secure" placeholder="" id="secure" readonly/></li>
+      <li><label>Secure</label><input type="text" name="secure" placeholder="" id="secure"/></li>
     </ul>
 	</form>
 	<small id="tagline">The best kept secret is one nobody knows.</small>

@@ -5,6 +5,9 @@ body {
 	background: #efefef;
 	margin: 0;
 }
+#logo img {
+  margin-top: 20px;
+}
 #tagline {
   display: block;
   text-align: center;

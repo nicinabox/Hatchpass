@@ -1,6 +1,11 @@
 <div id="home" class="current">
   <div class="toolbar">
-      <h1>HatchPass</h1>
+      <?php if ($mobile): ?>
+        <h1>HatchPass</h1>
+      <?php else: ?>
+        <h1><a id="logo" href="/" title=""><img src="/img/logo.png" alt="HatchPass"/></a></h1>
+      <?php endif ?>
+      
       <a class="button slideup leftButton" id="myUrlBtn" href="#myUrl">My Url</a>
       <a class="button flip" id="settingsBtn" href="#settings">Settings</a>
   </div>

@@ -1,11 +1,20 @@
+/* HOME
+----------------------------------*/
 body {
 	font-family: "helvetica neue", Helvetica, arial, sans-serif;
 	background: #efefef;
+	margin: 0;
+}
+#tagline {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  color: #bbb;
+  font-size: 10px;
 }
 a {
 	color: #4096EE;
 }
-
 .toolbar {
 	width:  230px;
 	margin: 0 auto;
@@ -60,4 +69,55 @@ a {
 }
 #hatchForm li {
 	margin-top:  10px;
+}
+input#secure {
+	border-color: #efefef;
+}
+input#secure:focus {
+	border-color: #99cc33;
+}
+.clearinput {
+  cursor: hand;
+	background: #efefef;
+	padding: 2px 8px 4px 8px;
+	-webkit-border-radius: 4px;
+	color: gray;
+	float: right;
+	position: relative;
+	margin-top: -33px;
+	margin-right: 10px;
+	text-decoration: none;
+	display: none;
+}
+.clearinput:hover {
+ background: #ddd; 
+}
+
+/* SETTINGS
+----------------------------------*/
+#settings {
+	background: #444;
+	border-bottom: 4px solid #666;
+	color: white;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	padding: 20px;
+	display: none;
+}
+#settings ul {
+	float:  left;
+	width:  200px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#settings h2 {
+	display: none;
+	float:  left;
+	width:  200px;
+}
+#settings .info	{
+	display: none;
 }

@@ -1,11 +1,14 @@
 <div id="settings">
-  <div class="toolbar">
-      <h1>Settings</h1>
-      <a class="button blueButton" id="saveSettings">Done</a>
-      <a class="button cancel" id="cancelSettings" href="#">Cancel</a>
-  </div>
-  
+<?php if ($mobile): ?>
+    <div class="toolbar">
+        <h1>Settings</h1>
+        <a class="button blueButton" id="saveSettings">Done</a>
+        <a class="button cancel" id="cancelSettings" href="#">Cancel</a>
+    </div>
+<?php endif ?>  
+
   <form method="POST">
+    <a class="button blueButton" href="#" id="saveSettings">Done</a>
   	<h2>Variation</h2>
   	<ul>
   	  <li><label>Symbols</label> <span class="toggle"><input id="symbols" type="checkbox" <?php echo parseSetting($s->symbols); ?>/></span></li>

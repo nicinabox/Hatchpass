@@ -1,34 +1,28 @@
-$(document).ready(function(){		
-	
-	$('#otherButton.blueButton').attr('target', '_self');
-	
-	// Remember url
-	// Set graybutton to current url
-	$('#myUrl #saveUrl').attr('href', +m+'/?id='+ID);
-
-	
-	$('#master').change(function(){
-		var r_master =  $("#r_master").attr('checked');
-		var master = $('#master').val();
-		if (parse(r_master) == "1") {
-			if (master != "") {
-				rememberMaster(ID);
-			}
-		}
-	});
-	
-	// Check if settings changed
-	var changed = [];
-	$('#settings input').change(function() {
-		changed.push($(this).attr('id'));
-	});
-	
-	$('#cancelSettings').click(function() {
-		console.log(changed);
-		resetSettings(changed);
-	});
-	
-	// Update settings
+$(document).ready(function() {
+  $('input').keyup(function(){
+    var val = $(this).val();
+    if (val != "") {
+     $(this).next('.clearinput').fadeIn(50); 
+    } else {
+      $(this).next('.clearinput').fadeOut(50); 
+    }
+  });
+  $('.clearinput').click(function() {
+    $(this).prev('input').val('').focus();
+    $(this).fadeOut(50);
+    $('#secure').val('');
+    return false;
+  });
+  
+  $('#settingsBtn').click(function(){
+    if ($('#settings').is(":visible")) {
+      $('#settings').slideUp(100);
+    } else {
+      $('#settings').slideDown(100);
+    }
+  });
+  
+  // Update settings
 	$('#saveSettings').click(function(){
 		var mySettings = getSettings();
 
@@ -66,8 +60,8 @@ $(document).ready(function(){
 		// These settings are specific to this url
 		var settingsChanged = false;
 		setSettingsForUrl(ID);
-		updateSecure();	
-		jQT.goBack();
+		updateSecure(ID);	
+		$("#settings").slideUp(100);
+		return false;
 	});
-	
 });

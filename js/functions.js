@@ -173,6 +173,7 @@ function updateSecure(ID, m) {
 	var host = $("#host").val();
 	
 	if (master != '' && host != '') {
+	  $('#secure').css('background', 'url(../img/ajax-loader.gif) 210px no-repeat');
 		mySettings = getSettings(ID);
 		$.post('/post.php',{
 			master: master, 
@@ -185,6 +186,7 @@ function updateSecure(ID, m) {
 			if (m == "/") {
 			  $('#secure').select();
 			}
+			$('#secure').css('background', '#fff');
 		});
 	} else {
 	  $('#secure').val('');

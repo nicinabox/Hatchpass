@@ -2,21 +2,6 @@ $(document).ready(function(){
 
 	$('#otherButton.blueButton').attr('target', '_self');
 	
-	// Remember url
-	// Set graybutton to current url
-	$('#myUrl #saveUrl').attr('href', +m+'/?id='+ID);
-
-	
-	$('#master').change(function(){
-		var r_master =  $("#r_master").attr('checked');
-		var master = $('#master').val();
-		if (parse(r_master) == "1") {
-			if (master != "") {
-				rememberMaster(ID);
-			}
-		}
-	});
-	
 	// Check if settings changed
 	var changed = [];
 	$('#settings input').change(function() {
@@ -41,7 +26,7 @@ $(document).ready(function(){
 		if (mySettings.r_url == "1") {
 			rememberUrl(ID, m);
 		} else {
-			forgetUrl(ID);
+			forgetUrl(ID, m);
 		}
 		if(mySettings.r_settings == "1") { // Post to db if we are remembering settings
 			//mySettings = getSettings(ID);
@@ -68,6 +53,11 @@ $(document).ready(function(){
 		setSettingsForUrl(ID);
 		updateSecure(ID);	
 		jQT.goBack();
+	});
+	
+	// Update main form
+	$("#master, #host").keyup(function() {
+		updateSecure(ID);
 	});
 	
 });

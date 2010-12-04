@@ -1,3 +1,9 @@
+function showToolbar(id) {
+  if ($('.panel').is(":visible") && !$(id).is(':visible')) {
+    $('.panel').slideUp(100);
+  }
+  $(id).slideToggle(100);
+}
 function parse (str) {
   switch (str.toString().toLowerCase()) {
     case "true":
@@ -110,12 +116,17 @@ function checkUrl(ID, m) {
 			window.location = "http://"+self.location.hostname+m+"?id="+saved_url;
 		}
 		$('#r_url').attr('checked', false);
-		var msg = "Your saved URL is "+saved_url;
-		$('#myUrl .my-url li').empty().append(msg);
-		$('#myUrl .whitebutton').attr('href', +m+'/?id='+saved_url).show();
+//		var msg = "Your saved URL is "+saved_url;
+    var msg = "Saved: <a href='http://"+self.location.hostname+m+"?id="+saved_url+"'>http://"+self.location.hostname+m+"?id="+saved_url+"</a>";
+		if (m != "/") {
+  	  $('#myUrl .my-url li').empty().append(msg);
+    	//$('#loadUrl').parent().hide();
+  	} else {
+  	  $('#myUrl h1').empty().append(msg);
+  	}
 	} else {
-		rememberUrl(ID);
-		setSettingsForUrl();
+		rememberUrl(ID, m);
+		setSettingsForUrl(ID);
 	}
 }
 function getSettingsForUrl() {
@@ -133,20 +144,27 @@ function getMyUrl() {
 function rememberUrl(ID, m) {
 	var saved_url = localStorage.setItem("rememberUrl", ID);
 	$('#r_url').attr('checked', true);
-	var msg = "Your saved URL is "+ID;
-	$('#myUrl .my-url li').empty().append(msg);
-	$('#myUrl .whitebutton').attr('href', +m+'/?id='+saved_url).show();
-	//$('#loadUrl').parent().hide();
-	console.log(msg);
+//	var msg = "Your saved URL is "+ID;
+    var msg = "Saved: http://"+self.location.hostname+m+"?id="+ID;
+	if (m != "/") {
+	  $('#myUrl .my-url li').empty().append(msg);
+  	//$('#loadUrl').parent().hide();
+	} else {
+	  $('#myUrl h1').empty().append(msg);
+	}
 }
-function forgetUrl(ID) {
+function forgetUrl(ID, m) {
 	var saved_url = getMyUrl();
 	if (saved_url == ID) {
 		$('#r_url').attr('checked', false);
 		localStorage.removeItem("rememberUrl");
 		var msg = "You chosen not to remember your URL";
-		$('#myUrl .my-url li').empty().append(msg);
-		$('#myUrl .whitebutton').hide();
+		if (m != "/") {
+		  $('#myUrl .my-url li').empty().append(msg);
+		} else {
+		  $('#myUrl h1').empty().append(msg);
+		}
+		
 	}
 	console.log(msg);
 }
@@ -164,6 +182,7 @@ function updateSecure(ID) {
 		},
 		 function(data){
 			$("#secure").val(data);
+			$('#secure').select();
 		});
 	} else {
 	  $('#secure').val('');

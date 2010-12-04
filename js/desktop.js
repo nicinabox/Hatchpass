@@ -14,17 +14,61 @@ $(document).ready(function() {
     return false;
   });
   
-  $('#settingsBtn').click(function(){
-    if ($('#settings').is(":visible")) {
-      $('#settings').slideUp(100);
-    } else {
-      $('#settings').slideDown(100);
-    }
+  // Settings keyboard activation
+	$(document).keyup(function(e) {
+	  var code = e.which;
+		var focusedInputs = $("input:focus");
+		if (focusedInputs != null && focusedInputs.length > 0) { 
+			inputHasFocus = true; 
+			if (code == 27) { $(':focus').blur(); }
+		} else {
+			inputHasFocus = false;
+			if (code == 27) { 
+			  if ($('.panel').is(':visible')) {
+			    $('.panel').slideUp(100);
+			  }
+			  if ($('#help').is(':visible')) {
+		      $('#help').fadeOut('fast');
+		    }
+			  if ($('#master').val().length > 0) {
+			    $('#host').focus();
+			  } else {
+			    $('#master').focus();
+			  }
+			}
+		}				
+		if (inputHasFocus != true) {
+			switch(code) {
+			  case 83: // s
+			    showToolbar("#settings");
+			    break;
+			  case 85: // u
+			    showToolbar("#myUrl");
+			    break;
+			  case 191: // foward slash
+			    if ($('#help').is(':visible')) {
+			      $('#help').fadeOut('fast');
+			    } else {
+			      $('#help').fadeIn('fast');
+			    }
+			    
+			  default:
+			    break;
+			}
+		}
+	});
+	
+	// Panel activation
+  $('#home .toolbar a').click(function() {
+    var id = $(this).attr('href'); // activate this
+    showToolbar(id);
+    return false;
   });
   
+  
   // Update settings
-	$('#saveSettings').click(function(){
-		var mySettings = getSettings();
+	$('#settings').click(function(){
+		var mySettings = getSettings(ID);
 
 		if (mySettings.r_master == "1") {
 			rememberMaster(ID);
@@ -33,12 +77,11 @@ $(document).ready(function() {
 			$('#master').val('');
 		}
 		if (mySettings.r_url == "1") {
-			rememberUrl(ID, m);
+			rememberUrl(ID);
 		} else {
-			forgetUrl(ID);
+			forgetUrl(ID, m);
 		}
 		if(mySettings.r_settings == "1") { // Post to db if we are remembering settings
-			//mySettings = getSettings(ID);
 			$.post('/post.php',{
 			 	action: "updateSettings",
 				settings: mySettings
@@ -61,7 +104,13 @@ $(document).ready(function() {
 		var settingsChanged = false;
 		setSettingsForUrl(ID);
 		updateSecure(ID);	
-		$("#settings").slideUp(100);
-		return false;
+//		$("#settings").slideUp(100);
+//		return false;
 	});
+	
+	// Update main form
+	$("#master, #host").change(function() {
+		updateSecure(ID);
+	});
+	
 });

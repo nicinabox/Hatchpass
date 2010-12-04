@@ -27,11 +27,7 @@ a {
 	text-decoration: none;
 }
 .toolbar a:hover {
-	background: #4096EE;
-	color: white;
-	
-	-webkit-border-radius: 2px;
-	border-top: 1px solid #1063b8;
+  text-decoration: underline;
 }
 #hatchForm {
 	width: 230px;
@@ -95,10 +91,10 @@ input#secure:focus {
 
 /* SETTINGS
 ----------------------------------*/
-#settings {
+.panel {
 	background: #444;
 	border-bottom: 4px solid #666;
-	color: white;
+	color: #efefef;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -106,18 +102,87 @@ input#secure:focus {
 	padding: 20px;
 	display: none;
 }
-#settings ul {
+.panel form {
+  overflow: auto;
+}
+.panel label {
+  font-size: 13px;
+  padding: 5px;
+}
+.panel input {
+  float: right;
+  margin: 3px 0;
+}
+.panel input[type="text"] {
+  width: 50px;
+  border: 2px solid #666;
+  outline: 0;
+  text-align: right;
+  padding: 2px;
+}
+.panel li {
+  margin: 3px 0;
+}
+.panel h2 {
+	display: none;
 	float:  left;
 	width:  200px;
+}
+.panel .info	{
+	display: none;
+}
+
+#settings form {
+  width: 510px;
+  margin: 0 auto;
+}
+#settings ul {
+	float:  left;
+	width:  140px;
+	min-height: 70px;
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin-right: 20px;
+	padding-right: 20px;
+  overflow: auto;
+  border-right: 1px dotted #666;
 }
-#settings h2 {
-	display: none;
-	float:  left;
-	width:  200px;
+#settings ul.last {
+  margin-right: 0;
+  padding-right: 0;
+  border: none;
 }
-#settings .info	{
-	display: none;
+#myUrl {
+  text-align: center;
+}
+#myUrl ul {
+  list-style: none;
+}
+
+/* HELP
+----------------------------------*/
+#help {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+/*  background: rgba(0,0,0, .85); */
+  color: #fff;
+  display: none;
+}
+#help table {
+  padding: 40px;
+  margin: 80px auto;
+  background: rgba(0,0,0, .85);
+  -webkit-border-radius: 5px;
+}
+#help td {
+  color: #bbb;
+  padding: 10px;
+}
+#help td:first-child {
+  font-weight: bold;
+  color: #efefef;
 }

@@ -5,9 +5,23 @@ $(document).ready(function() {
   settingsID = getSettingsForUrl();
   s = defaultSettings(ID);
   m = self.location.pathname; // are we mobile?
-//  loadUrl = "http://hatchpass.org/ajax.php";
   loadUrl = "http://"+self.location.hostname+"/ajax.php";
   
+  // Remember master
+  $('#master').change(function(){
+		var r_master =  $("#r_master").attr('checked');
+		var master = $('#master').val();
+		if (parse(r_master) == "1") {
+			if (master != "") {
+				rememberMaster(ID);
+			}
+		}
+	});
+	
+  // My url
+	$('#saveUrl').attr('href', m+'?id='+ID);
+	$('#loadUrl').attr('href', m+'?id='+localStorage.getItem('rememberUrl'));
+	
   checkUrl(ID, m);
   
   if (settingsID == ID) {
@@ -26,9 +40,10 @@ $(document).ready(function() {
 		rememberUrl(ID, m);
 	});
 	
-	// Update main form
-	$("#master, #host").keyup(function() {
-		updateSecure(ID);
-	});
-	
+  $('#master, #host').keyup(function(){
+    if ($(this).val() == "") {
+      $('#secure').val('');
+    }
+  });
+		
 });

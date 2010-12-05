@@ -1,0 +1,44 @@
+@import url('core.css');
+
+/* HIDES
+----------------------------------*/
+#logo, #about, #footer {
+  display: none;
+}
+
+/* OVERWRITES
+----------------------------------*/
+body {
+  background: white;
+}
+.toolbar {
+  width: 180px;
+}
+#hatchForm {
+  width: 180px;
+  -moz-box-shadow: none;
+  padding: 0px;
+}
+#hatchForm input {
+  width: 180px;
+}
+#settings ul {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-right: 0;
+  border-bottom: 1px dotted #666;
+}
+#myUrl {
+  padding: 0;
+  width: 100%;
+}
+#myUrl ul {
+  padding: 0;
+}
+#myUrl h1 {
+  font-size: 14px;
+  margin: 10px;
+}

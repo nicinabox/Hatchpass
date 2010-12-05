@@ -120,4 +120,10 @@ $(document).ready(function() {
 		updateSecure(ID, m);
 	});
 	
+	// About
+	$('#aboutproject').click(function() {
+	 $('#about').slideToggle(100);
+	 return false;
+	});
+	
 });

@@ -10,7 +10,9 @@ if (!isset($_GET['id'])) {
     header("Location: /?id=".$url);
   }
 }
+
 $uri = parse_url($_SERVER['REQUEST_URI']);
+$view = $_GET['v'];
 
 // Figure out which assets to load
 switch ($uri['path']) {
@@ -63,14 +65,35 @@ switch ($uri['path']) {
   	<script src="/js/iphone.js" type="text/javascript" charset="utf-8"></script>
 	
   <?php else: ?>
+    <?php if ($view == "sidebar"): ?>
+      <link rel="stylesheet" href="/css/sidebar.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <?php elseif($view == "minimal"): ?>
+      <link rel="stylesheet" href="/css/minimal.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <?php else: ?>
+      <link rel="stylesheet" href="/css/desktop.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <?php endif ?>
     
-    <link rel="stylesheet" href="/css/desktop.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <script src="/js/desktop.js" type="text/javascript" charset="utf-8"></script>
   
   <?php endif ?>
+  
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20072687-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
 </head>
 <body>
   <?php  
+  // Load default settings
   $sql = "SELECT * FROM settings WHERE myId = '{$_GET['id']}'";
   $result = mysql_query($sql) or die(mysql_error());
   $num = mysql_num_rows($result);

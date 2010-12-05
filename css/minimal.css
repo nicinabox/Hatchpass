@@ -1,0 +1,10 @@
+@import url("core.css");
+
+#home {
+  margin-top: 40px;
+}
+/* HIDE
+----------------------------------*/
+.toolbar, #help, #about, #footer {
+  display: none;
+}

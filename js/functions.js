@@ -144,7 +144,6 @@ function getMyUrl() {
 function rememberUrl(ID, m) {
 	var saved_url = localStorage.setItem("rememberUrl", ID);
 	$('#r_url').attr('checked', true);
-//	var msg = "Your saved URL is "+ID;
     var msg = "Saved: http://"+self.location.hostname+m+"?id="+ID;
 	if (m != "/") {
 	  $('#myUrl .my-url li').empty().append(msg);

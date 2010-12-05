@@ -1,0 +1,209 @@
+body {
+	font-family: "helvetica neue", Helvetica, arial, sans-serif;
+	background: #efefef;
+	margin: 0;
+}
+#logo img {
+  margin-top: 20px;
+}
+#tagline {
+  display: block;
+  text-align: center;
+  margin: 10px 0;
+  color: #bbb;
+  font-size: 10px;
+}
+.amp {
+  font-family:Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
+  font-size:110%;
+  font-style:italic;
+}
+
+
+a {
+	color: #4096EE;
+}
+a img {
+  border: 0;
+}
+.toolbar {
+	width:  230px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.toolbar a {
+	padding: 2px 5px;
+	font-size: 15px;
+	text-decoration: none;
+}
+.toolbar a:hover {
+  text-decoration: underline;
+}
+#hatchForm {
+	width: 240px;
+	background:  white;
+	margin: 0 auto;
+	padding:  20px;
+	-webkit-border-radius: 3px;
+	-webkit-box-shadow: 0 0 5px #888;
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0 0 5px #888;
+}
+#hatchForm input {
+  width: 240px;
+	font-size: 20px;
+	padding: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 2px solid silver;
+	background: white;
+	margin: 2px 0;
+	color: #555;
+}
+#hatchForm input:focus {
+	border-color: #0096ce;
+	outline: 0;
+	color: #222;
+}
+#hatchForm label {
+	display:  block;
+	color: #aaa;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+}
+#hatchForm ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#hatchForm li {
+	margin-top:  10px;
+}
+input#secure {
+	border-color: #efefef;
+}
+input#secure:focus {
+	border-color: #99cc33;
+}
+.clearinput {
+  cursor: pointer;
+	background: #efefef;
+	padding: 2px 8px 4px 8px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	color: gray;
+	float: right;
+	position: relative;
+	margin-top: -33px;
+	margin-right: 8px;
+	text-decoration: none;
+	display: none;
+}
+.clearinput:hover {
+ background: #ddd; 
+}
+
+/* SETTINGS
+----------------------------------*/
+.panel {
+	background: #444;
+	border-bottom: 4px solid #666;
+	color: #efefef;
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	padding: 20px;
+	display: none;
+}
+.panel form {
+  overflow: auto;
+}
+.panel label {
+  font-size: 13px;
+  padding: 5px;
+}
+.panel input {
+  float: right;
+  margin: 3px 0;
+}
+.panel input[type="text"] {
+  width: 50px;
+  border: 2px solid #666;
+  outline: 0;
+  text-align: right;
+  padding: 2px;
+}
+.panel li {
+  margin: 3px 0;
+}
+.panel h2 {
+	display: none;
+	float:  left;
+	width:  200px;
+}
+.panel .info	{
+	display: none;
+}
+
+#settings form {
+  max-width: 540px;
+  margin: 0 auto;
+}
+#settings ul {
+	float:  left;
+	width:  140px;
+	min-height: 70px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-right: 20px;
+	padding-right: 20px;
+  border-right: 1px dotted #666;
+}
+#settings ul.last {
+  margin-right: 0;
+  padding-right: 0;
+  border: none;
+}
+#myUrl {
+  text-align: center;
+}
+#myUrl ul {
+  list-style: none;
+}
+
+/* HELP
+----------------------------------*/
+#help {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: none;
+}
+#help > table {
+  padding: 40px;
+  margin: 60px auto;
+  background: rgba(0,0,0, .85);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#help th {
+  color: #efefef;
+  padding: 5px;
+  margin: 0;
+  border-bottom: 1px dotted #efefef;
+}
+#help td {
+  color: #bbb;
+  padding: 10px;
+}
+#help td:first-child {
+  font-weight: bold;
+  color: #efefef;
+}

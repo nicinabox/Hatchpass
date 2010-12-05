@@ -1,5 +1,8 @@
 <div id="help">
   <table>
+    <tr class="title">
+      <th colspan="2">Shortcuts</th>
+    </tr>
     <tr>
       <td>Esc</td><td>Blur/Focus Inputs</td>
     </tr>
@@ -17,6 +20,15 @@
     </tr>
     <tr>
       <td>h or /</td><td>Help</td>
+    </tr>
+    <tr class="title">
+      <th colspan="2">Url Tricks</th>
+    </tr>
+    <tr>
+      <td>&amp;v=sidebar</td><td>Optimized for loading in Firefox sidebar</td>
+    </tr>
+    <tr>
+      <td>&amp;v=minimal</td><td>Minimal app</td>
     </tr>
   </table>
 </div><!-- #help -->

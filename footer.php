@@ -2,7 +2,12 @@
   <div id="about">
     <div class="container">
       <!-- <h2>The Hatchpass Project</h2> -->
-      <p>Create strong, unique passwords for your online accounts. You may want to remember or write down the ID in your url. It's unique only to you and you won't be able to get the same passwords without it.</p>
+      <p><strong>Create strong, unique passwords for your online accounts. Don't remember any of them.</strong></p>
+      <p>This app combines your master password with the domain (and some other data) to create a really kick ass password. Every time you type that combination, you'll get the same password.</p>
+      
+      <p>This password is unique to you. See that ID in the address bar? That's yours. It influences the creation of your passwords. No one else can have the same one, even if they use the same master + domain combo.</p>
+      
+      <p>You may want to remember or write down the ID in your url. You and you won't be able to get the same passwords without it.</p>
       
     </div>
   </div>

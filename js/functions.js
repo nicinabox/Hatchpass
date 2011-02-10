@@ -113,11 +113,11 @@ function checkUrl(ID, m) {
 	if (saved_url != ID && saved_url != null) {
 		var answer = confirm("You have a saved URL. Would you like to load it instead?");
 		if (answer) {
-			window.location = "http://"+self.location.hostname+m+"?id="+saved_url;
+			window.location = "http://"+self.location.hostname+m+saved_url;
 		}
 		$('#r_url').attr('checked', false);
 //		var msg = "Your saved URL is "+saved_url;
-    var msg = "Saved: <a href='http://"+self.location.hostname+m+"?id="+saved_url+"'>http://"+self.location.hostname+m+"?id="+saved_url+"</a>";
+    var msg = "Saved: <a href='http://"+self.location.hostname+m+"/"+saved_url+"'>http://"+self.location.hostname+m+"/"+saved_url+"</a>";
 		if (m != "/") {
   	  $('#myUrl .my-url li').empty().append(msg);
     	//$('#loadUrl').parent().hide();
@@ -144,7 +144,7 @@ function getMyUrl() {
 function rememberUrl(ID, m) {
 	var saved_url = localStorage.setItem("rememberUrl", ID);
 	$('#r_url').attr('checked', true);
-    var msg = "Saved: http://"+self.location.hostname+m+"?id="+ID;
+    var msg = "Saved: http://"+self.location.hostname+m+"/"+ID;
 	if (m != "/") {
 	  $('#myUrl .my-url li').empty().append(msg);
   	//$('#loadUrl').parent().hide();

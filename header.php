@@ -5,9 +5,9 @@ if (!isset($_GET['id'])) {
   $browser = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
   $ipod = strstr($_SERVER['HTTP_USER_AGENT'],'iPod');
   if ($browser || $ipod)  {
-    header("Location: /m/?id=".$url);
+    #header("Location: /m/?id=".$url);
   } else {
-    header("Location: /?id=".$url);
+    #header("Location: /".$url);
   }
 }
 
@@ -16,11 +16,11 @@ $view = $_GET['v'];
 
 // Figure out which assets to load
 switch ($uri['path']) {
-  case '/':
-    $desktop = true;
+  case '/m':
+    $mobile = true;
     break;
   default:
-    $mobile = true;
+    $desktop = true;
     break;
 }
 

@@ -4,7 +4,10 @@ $(document).ready(function() {
   OPT = false;
   settingsID = getSettingsForUrl();
   s = defaultSettings(ID);
-  m = self.location.pathname; // are we mobile?
+  if (self.location.pathname == "m") {
+    m = self.location.pathname; // are we mobile?
+  }
+  
   loadUrl = "http://"+self.location.hostname+"/ajax.php";
   
   // Remember master

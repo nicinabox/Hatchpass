@@ -1,7 +1,7 @@
 <?php
 /* Connect to database */
-mysql_connect("127.0.0.1", "root", "x112358x") or die(mysql_error());
-mysql_select_db("pwgen") or die(mysql_error());
+mysql_connect("127.0.0.1", "root", "") or die(mysql_error());
+mysql_select_db("hatchpass") or die(mysql_error());
 
 /* Constants */
 define(ID, $_GET['id']);

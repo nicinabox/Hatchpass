@@ -13,7 +13,7 @@
   </div>
   <div id="footer">
     <ul>
-      <li>Version 2.2</li>
+      <li>Version <?= VERSION ?></li>
       <li><a id="aboutproject" href="#about">About Hatchpass</a></li>
       <li>Designed <span class="amp">&amp;</span> developed by <a target="_blank" href="http://nicinabox.com">Nic Haynes</a></li>
     </ul>

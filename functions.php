@@ -8,7 +8,7 @@ define(ID, $_GET['id']);
 define(HIDE, $_GET['h']);
 define(MYURL, "http://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 define(DEBUG, false);
-
+define(VERSION, "2.3");
 /* Array of symbols */
 $symarr = array("!","@","#","]","^","&","*","(","%","[","?","$","{","+","=","}",")","_","-","|","/","<",">");
 

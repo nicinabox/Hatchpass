@@ -7,7 +7,7 @@ $(document).ready(function() {
   if (self.location.pathname == "m") {
     m = self.location.pathname; // are we mobile?
   } else {
-    m = "";
+    m = "/";
   }
   
   loadUrl = "http://"+self.location.hostname+"/ajax.php";

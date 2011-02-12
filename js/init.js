@@ -6,6 +6,8 @@ $(document).ready(function() {
   s = defaultSettings(ID);
   if (self.location.pathname == "m") {
     m = self.location.pathname; // are we mobile?
+  } else {
+    m = "";
   }
   
   loadUrl = "http://"+self.location.hostname+"/ajax.php";

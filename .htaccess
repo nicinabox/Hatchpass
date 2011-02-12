@@ -4,7 +4,7 @@ RewriteBase /
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]*)$ ?id=$1 [L]
+RewriteRule ^([^/]*)$ /?id=$1&v=$2 [QSA,L]
 </IfModule> 
 <IfModule !mod_rewrite.c>
     ErrorDocument 404 /index.php

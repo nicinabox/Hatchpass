@@ -25,10 +25,10 @@
       <th colspan="2">Url Tricks</th>
     </tr>
     <tr>
-      <td>&amp;v=sidebar</td><td>Optimized for loading in Firefox sidebar</td>
+      <td>?v=sidebar</td><td>Optimized for loading in Firefox sidebar</td>
     </tr>
     <tr>
-      <td>&amp;v=minimal</td><td>Minimal app</td>
+      <td>?v=minimal</td><td>Minimal app</td>
     </tr>
   </table>
 </div><!-- #help -->
